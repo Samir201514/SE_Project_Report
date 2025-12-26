@@ -21,7 +21,11 @@ git status
 Push:
 git add .
 git commit -m "Clear Comment"
+<<<<<<< HEAD
 git push origin branchName
+=======
+git push origin main
+>>>>>>> 741788e3731085ab463d326022f30be0a692dd62
 
 
 Before Working:
