@@ -1,60 +1,85 @@
-Git Configurations:
-git config --global user.name "Samir201514"
-git config --global user.email "arafat.rahman3926@gmail.com"
- 
 
-Setting SSH key:
-ssh-keygen -t rsa -f ~/.ssh/id_rsa <<< y
-cat ~/.ssh/id_rsa.pub
-ssh -T git@github.com
+GIT WORKFLOW NOTES (ALL COMMANDS TOGETHER)
 
+1. Clone the Central Repository (Everyone)
+git clone https://github.com/username/project-name.git
+cd project-name
 
-list:
-ls
+2. Check Current Branch
+git branch
 
-list(Hidden File):
-ls -a
+3. Create Your Own Feature Branch
+git checkout -b feature-yourtask
+Example:
+git checkout -b feature-report
 
-Status:
+4. Check File Status
 git status
 
-From GitHub:
-git clone url
+5. Add Files to Staging Area
 git add .
-git commit -m "Comment"
-git push -u origin main
-git push
+OR
+git add filename.ext
 
+6. Commit Changes (Clear Message)
+git commit -m "Describe your update clearly"
+Example:
+git commit -m "Add algorithm explanation section"
 
-From PC:
-cd ..
-mkdir FolderName
-cd FolderName/
-touch README.md
-touch NewFileName.extention
-echo "Write Anything" > NewFileName.extention
-git init
-git add .
-git commit -m "Comment"
-git remote add origin url
-git push -u origin main
+7. Push Feature Branch to GitHub
+git push origin feature-yourtask
 
+8. Stay Updated (VERY IMPORTANT)
 
-To create a New Branch:
-git branch (To Check)
-git branch -m main (to rename branch)
-git checkout BranchName (to Switch)
-git checkout -b BranchName (to create)
-git push -u origin BranchName
-git push origin --delete branch-name (to delete)
-
-Pull:
+Pull Latest Changes from Main:
+git checkout main
 git pull origin main
 
-Merging:
-git diff BranchName
-git merge BranchName
+Update Your Feature Branch:
+git checkout feature-yourtask
+git merge main
+OR
+git pull origin main
 
+9. Switch Between Branches
+git checkout main
+git checkout feature-yourtask
 
+10. Create Pull Request (GitHub Steps)
+- Go to GitHub repository
+- Click Compare & Pull Request
+- Base branch: main
+- Compare branch: feature-yourtask
+- Review and Merge
 
+11. Merge Feature Branch into Main (After Approval)
+git checkout main
+git merge feature-yourtask
+git push origin main
 
+12. Resolve Conflicts (If Any)
+git status
+# Fix conflict files manually
+git add .
+git commit -m "Resolve merge conflict"
+
+13. View Commit History (Evidence of Collaboration)
+git log
+Clean graph view:
+git log --oneline --graph --all
+
+14. Check Contributors
+git shortlog -s -n
+
+15. Delete Feature Branch (Optional)
+git branch -d feature-yourtask
+git push origin --delete feature-yourtask
+
+SIMPLE GROUP RULES:
+- Never work directly on main
+- Always pull before coding
+- Always push after coding
+- Use feature branches and pull requests
+
+ONE-LINE VIVA ANSWER:
+We used a centralized GitHub repository where each member worked on individual feature branches, committed changes regularly, pulled updates to stay synchronized, and merged work into the main branch using pull requests.
