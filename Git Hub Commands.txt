@@ -1,61 +1,49 @@
-
 GIT WORKFLOW NOTES (ALL COMMANDS TOGETHER)
 
-1. Clone the Central Repository (Everyone)
-git clone https://github.com/username/project-name.git
-cd project-name
 
-2. Check Current Branch
+Clone the Central Repository (Everyone):
+git clone https://github.com/Samir201514/SE_Project_Report.git
+cd SE_Project_Report
+
+
+Check Current Branch:
 git branch
 
-3. Create Your Own Feature Branch
-git checkout -b feature-yourtask
-Example:
-git checkout -b feature-report
 
-4. Check File Status
+Create Your Own Feature Branch:
+git checkout -b branchName
+
+
+Check File Status:
 git status
 
-5. Add Files to Staging Area
+
+Push:
 git add .
-OR
-git add filename.ext
-
-6. Commit Changes (Clear Message)
-git commit -m "Describe your update clearly"
-Example:
-git commit -m "Add algorithm explanation section"
-
-7. Push Feature Branch to GitHub
+git commit -m "Clear Comment"
 git push origin feature-yourtask
 
-8. Stay Updated (VERY IMPORTANT)
 
-Pull Latest Changes from Main:
+Before Working:
 git checkout main
 git pull origin main
-
-Update Your Feature Branch:
-git checkout feature-yourtask
+git checkout branchName
 git merge main
-OR
-git pull origin main
 
-9. Switch Between Branches
-git checkout main
-git checkout feature-yourtask
 
-10. Create Pull Request (GitHub Steps)
+Create Pull Request (GitHub Steps):
 - Go to GitHub repository
 - Click Compare & Pull Request
 - Base branch: main
 - Compare branch: feature-yourtask
 - Review and Merge
 
+
 11. Merge Feature Branch into Main (After Approval)
 git checkout main
 git merge feature-yourtask
 git push origin main
+
 
 12. Resolve Conflicts (If Any)
 git status
