@@ -21,7 +21,7 @@ git status
 Push:
 git add .
 git commit -m "Clear Comment"
-git push origin feature-yourtask
+git push origin main
 
 
 Before Working:
